@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { client } from './helpers/configure-apollo-client'
 import { isDevelopment } from './helpers/environment'

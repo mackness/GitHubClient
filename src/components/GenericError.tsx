@@ -1,3 +1,5 @@
 import React from 'react'
 
-export function GenericError() {}
+export function GenericError() {
+  return <p>Error :(</p>
+}

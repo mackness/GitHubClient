@@ -1,7 +1,8 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-import './App.css'
+import { Loader } from './components/Loader'
+import { GenericError } from './components/GenericError'
 
 export const ORG_QUERY = gql(`
   query OrganizationQuery($first: Int, $query: String!, $after: String) {
@@ -21,9 +22,28 @@ export const ORG_QUERY = gql(`
   }
 `)
 
-export interface IOrgQueryData {}
+export interface IRepository {
+  avatarUrl: string
+  id: string
+  name: string
+}
 
-export interface IOrgQueryVariables {}
+export interface IOrgQueryData {
+  data: {
+    search: {
+      edges: {
+        cursor: string
+        node: IRepository
+      }
+    }
+  }
+}
+
+export interface IOrgQueryVariables {
+  first: number
+  query: string
+  cursor?: string
+}
 
 export function GitHubClient() {
   const { loading, error, data } = useQuery<IOrgQueryData, IOrgQueryVariables>(
@@ -36,10 +56,17 @@ export function GitHubClient() {
     }
   )
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  if (loading) return <Loader />
+  if (error) return <GenericError />
 
   return (
-    <div className="App">{<pre>{JSON.stringify(data, undefined, 2)}</pre>}</div>
+    <React.Fragment>
+      <h2 className="font-display">Search GitHub for an orgnaization:</h2>
+      <input
+        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        type="text"
+        placeholder="Organization name e.g. Netflix"
+      />
+    </React.Fragment>
   )
 }

@@ -1,6 +1,6 @@
 # GitHub Client
 
-A simple UI to explore GitHub organizations and repositories.
+A simple UI to explore GitHub organizations and repositories built on top of the GraphQL API.
 
 ### Setup
 
@@ -27,5 +27,3 @@ Start the development server
 ```
 yarn start
 ```
-
-Navigate to http://localhost:3000 in a browser
