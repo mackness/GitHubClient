@@ -13,7 +13,7 @@ git clone https://github.com/mackness/GitHubClient.git
 Install dependencies
 
 ```
-yarn
+cd GitHubClient && yarn
 ```
 
 Add REACT_APP_GITHUB_API_TOKEN to a .env file
