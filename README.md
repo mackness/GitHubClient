@@ -28,7 +28,7 @@ Start the development server:
 yarn start
 ```
 
-Notes:
+### Notes:
 
 I decided to use [Create React App](https://github.com/facebook/create-react-app) to spend as little time as posible on setup and configuraton. My goal was to start writing application code as soon as possible.
 
