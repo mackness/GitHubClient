@@ -38,6 +38,6 @@ I wanted to take this opportunity to get my feet wet with [Tailwind CSS](https:/
 
 I used [React Router](https://reacttraining.com/react-router/) because I think routing and being able to link directly to organization and repositories is a critical feature.
 
-My main goal was to be as feature complete as possible and unfortunatley I ran out of time before having the opportunity to write tests. Given more time I would use Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write a few unit tests for the `GithubClient`, `OrganizationDetailView`, and `RepositoryDetailView` components.
+My main goal was to be as feature complete as possible and unfortunately I ran out of time before having the opportunity to write tests. Given more time I would use Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write a few unit tests for the `GithubClient`, `OrganizationDetailView`, and `RepositoryDetailView` components. I would have also implemented cursor based pagination of organizations and repositories.
 
-I enjoyed learning about GitHub's GraphQL API they have done a great good job making the documentation digestible and easy to follow.
+I enjoyed learning about GitHub's GraphQL API they have done a great good job making the documentation digestible and easy to follow. The GraphQL API made it possible to make fewer round trips to the server and only fetch the data needed for the view improving overall performance of the app.
