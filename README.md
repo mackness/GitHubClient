@@ -7,7 +7,7 @@ A simple UI to explore GitHub organizations and repositories built on top of the
 Clone the respoitory:
 
 ```
-git clone [TBD]
+git clone https://github.com/mackness/GitHubClient.git
 ```
 
 Install dependencies
