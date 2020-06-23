@@ -16,7 +16,7 @@ Install dependencies
 cd GitHubClient && yarn
 ```
 
-Add REACT_APP_GITHUB_API_TOKEN to a .env file
+Add `REACT_APP_GITHUB_API_TOKEN` to a .env file
 
 ```
 echo REACT_APP_GITHUB_API_TOKEN=[YOUR API TOKEN] > .env
@@ -36,6 +36,6 @@ I knew I wanted to have the GitHub API populate a dropdown with organizations. R
 
 I wated to take this opportunity to get my feet wet with [Tailwind CSS](https://tailwindcss.com/). This is the first time I've used it and there was a small learning curve but the utitlity class approach is very interesting and I will definitley continue exploring this lib.
 
-My main goal was to be as feature complete as possible and unfortunatley I ran out of time before having the opportunity to write tests. Given more time I would use Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write a few unit tests for the GithubClient, OrganizationDetailView, and RespositoryDetailView components.
+My main goal was to be as feature complete as possible and unfortunatley I ran out of time before having the opportunity to write tests. Given more time I would use Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write a few unit tests for the `GithubClient`, `OrganizationDetailView`, and `RespositoryDetailView` components.
 
 I enjoyed learning about Github's GraphQL API they have done a great good job making the documentation digestable and easy to follow.
