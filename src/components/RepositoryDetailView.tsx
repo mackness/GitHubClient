@@ -9,10 +9,10 @@ import {
 } from '../types'
 import { Loader } from './Loader'
 import { GenericError } from './GenericError'
-import { LanuagePills } from './LanguagePills'
+import { LanguagePills } from './LanguagePills'
 
 const REPO_DETAIL_QUERY = gql(`
-  query RespositoryDetailQuery($name: String!, $owner: String!) {
+  query RepositoryDetailQuery($name: String!, $owner: String!) {
     repository(name: $name, owner: $owner) {
       name
       description
@@ -54,13 +54,20 @@ export interface ICommitLogProps {
 
 export const CommitLog: React.FC<ICommitLogProps> = ({ commits }) => {
   return (
-    <div className="divide-y divide-gray-400">
+    <div className="flex flex-col-reverse divide-y divide-y-reverse divide-gray-400">
       {commits.map(({ oid, messageHeadline, committedDate }: ICommit) => (
         <React.Fragment key={oid}>
-          <p>commit: {oid}</p>
-          <p>message: {messageHeadline}</p>
-          <p>date: {committedDate}</p>
-          <div className="text-center py-2" />
+          <div className="mb-4 pb-3">
+            <p>
+              <b>commit:</b> {oid}
+            </p>
+            <p>
+              <b>message:</b> {messageHeadline}
+            </p>
+            <p>
+              <b>date</b> {committedDate}
+            </p>
+          </div>
         </React.Fragment>
       ))}
     </div>
@@ -88,10 +95,13 @@ export const RepositoryDetailView: React.FC = () => {
 
   return (
     <div className="mt-3">
-      <h1>{name}</h1>
-      <h4>{description}</h4>
-      <LanuagePills languages={languages.edges} />
-      <h4>Commit Log:</h4>
+      <header className="mb-3">
+        <h1 className="text-3xl">{name}</h1>
+        <h4 className="text-lg">{description}</h4>
+      </header>
+      <h4 className="text-3xl">Languages:</h4>
+      <LanguagePills languages={languages.edges} />
+      <h4 className="text-3xl">Commit Log:</h4>
       {object && <CommitLog commits={object.history.nodes} />}
     </div>
   )

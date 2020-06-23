@@ -5,7 +5,7 @@ export interface ILanguagePillsProps {
   languages: IEdge<ILanguage>[]
 }
 
-export const LanuagePills: React.FC<ILanguagePillsProps> = ({ languages }) => {
+export const LanguagePills: React.FC<ILanguagePillsProps> = ({ languages }) => {
   return (
     <div className="flex flex-wrap px-4 py-4">
       {languages.map((edge: IEdge<ILanguage>, i: number) => {

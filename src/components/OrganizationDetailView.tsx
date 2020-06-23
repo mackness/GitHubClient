@@ -12,7 +12,7 @@ import {
 import { getRepositoryDetailPath } from '../helpers/routes'
 import { Loader } from './Loader'
 import { GenericError } from './GenericError'
-import { LanuagePills } from './LanguagePills'
+import { LanguagePills } from './LanguagePills'
 
 export const ORG_DETAIL_QUERY = gql(`
   query OrganizationDetailQuery($login: String!) {
@@ -67,7 +67,7 @@ export const RepositoryCard: React.FC<IRepository> = ({
           <p className="text-gray-700 text-base">{`forks: ${forkCount}`}</p>
           <p className="text-gray-700 text-base">{`stars: ${stargazers.totalCount}`}</p>
         </div>
-        <LanuagePills languages={languages.edges} />
+        <LanguagePills languages={languages.edges} />
       </div>
     </Link>
   )
