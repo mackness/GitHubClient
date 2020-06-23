@@ -33,6 +33,7 @@ const REPO_DETAIL_QUERY = gql(`
           history(first: 10) {
             nodes {
               oid
+              url
               messageHeadline
               author {
                 user {
@@ -55,11 +56,14 @@ export interface ICommitLogProps {
 export const CommitLog: React.FC<ICommitLogProps> = ({ commits }) => {
   return (
     <div className="flex flex-col-reverse divide-y divide-y-reverse divide-gray-400">
-      {commits.map(({ oid, messageHeadline, committedDate }: ICommit) => (
+      {commits.map(({ oid, messageHeadline, committedDate, url }: ICommit) => (
         <React.Fragment key={oid}>
           <div className="mb-4 pb-3">
             <p>
-              <b>commit:</b> {oid}
+              <b>commit:</b>{' '}
+              <a href={url} style={{ color: '#0000EE' }}>
+                {oid}
+              </a>
             </p>
             <p>
               <b>message:</b> {messageHeadline}

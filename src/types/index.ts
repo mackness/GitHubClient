@@ -55,6 +55,7 @@ export interface IOrgDetailQueryVariables {
 
 export interface ICommit {
   oid: string
+  url: string
   messageHeadline: string
   committedDate: string
 }
