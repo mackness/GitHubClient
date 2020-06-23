@@ -10,19 +10,19 @@ Clone the respoitory:
 git clone https://github.com/mackness/GitHubClient.git
 ```
 
-Install dependencies
+Install dependencies:
 
 ```
 cd GitHubClient && yarn
 ```
 
-Add `REACT_APP_GITHUB_API_TOKEN` to a .env file
+Add `REACT_APP_GITHUB_API_TOKEN` to a .env file:
 
 ```
 echo REACT_APP_GITHUB_API_TOKEN=[YOUR API TOKEN] > .env
 ```
 
-Start the development server
+Start the development server:
 
 ```
 yarn start
