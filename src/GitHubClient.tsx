@@ -128,7 +128,7 @@ export const GitHubClient: React.FC = () => {
         <input
           type="text"
           className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-          placeholder="e.g. Credit Karma"
+          placeholder="e.g. Netflix"
           {...getInputProps({
             onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
               if (event.target.value === '') {
