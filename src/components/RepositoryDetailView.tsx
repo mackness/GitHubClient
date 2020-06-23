@@ -61,7 +61,7 @@ export const CommitLog: React.FC<ICommitLogProps> = ({ commits }) => {
           <div className="mb-4 pb-3">
             <p>
               <b>commit:</b>{' '}
-              <a href={url} style={{ color: '#0000EE' }}>
+              <a href={url} className="text-blue">
                 {oid}
               </a>
             </p>
