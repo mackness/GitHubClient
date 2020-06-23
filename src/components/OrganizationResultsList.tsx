@@ -4,12 +4,13 @@ import {
   UseComboboxGetLabelPropsOptions,
   UseComboboxGetItemPropsOptions,
 } from 'downshift'
+import { IOrganization, IEdge } from '../types'
 
 export interface IOrganizationResultsListProps {
-  getMenuProps: (options?: UseComboboxGetLabelPropsOptions) => any
-  getItemProps: (options: UseComboboxGetItemPropsOptions<unknown>) => any
+  getMenuProps: (options?: UseComboboxGetLabelPropsOptions) => unknown
+  getItemProps: (options: UseComboboxGetItemPropsOptions<unknown>) => unknown
   isOpen: boolean
-  organizations: any
+  organizations: IEdge<IOrganization>[]
   highlightedIndex: number
 }
 
@@ -24,7 +25,7 @@ export const OrganizationResultsList: React.FC<IOrganizationResultsListProps> = 
     <div className="mt-3 absolute bg-white shadow-md right-0 left-0">
       <ul {...getMenuProps()}>
         {isOpen &&
-          organizations.map((item: any, index: number) => (
+          organizations.map((item: IEdge<IOrganization>, index: number) => (
             <li
               key={`${item}${index}`}
               {...getItemProps({ item: item.node.name, index })}
