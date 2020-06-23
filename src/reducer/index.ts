@@ -86,6 +86,6 @@ export function reducer(state: any, action: GitHubClientActions) {
       return init()
     default:
       const badAction: never = action
-      if (isDevelopment()) throw new Error(`Uknown action type: ${badAction}`)
+      if (isDevelopment()) throw new Error(`Unknown action type: ${badAction}`)
   }
 }
