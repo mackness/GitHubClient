@@ -65,7 +65,11 @@ export const CommitLog: React.FC<ICommitLogProps> = ({ commits }) => {
               <b>message:</b> {messageHeadline}
             </p>
             <p>
-              <b>date</b> {committedDate}
+              <b>date:</b>
+              {`
+                ${new Date(committedDate).toLocaleDateString()}
+                ${new Date(committedDate).toLocaleTimeString()} 
+              `}
             </p>
           </div>
         </React.Fragment>
