@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "css-loader": "^3.6.0",
-    "postcss": "^7.0.32",
+    "postcss": "^8.2.10",
     "prettier": "2.0.5",
     "style-loader": "^1.2.1"
   }
